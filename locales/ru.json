@@ -8537,6 +8537,7 @@
   "Only notes tagged": "Только стикеры с тегом",
   "Only on a computer": "Только на компьютере",
   "Only on days with cards due that you have not studied yet. After 30 days without studying the reminder pauses. Where it arrives you choose under Settings → Notifications at “Study reminders”.": "Только в дни, когда есть карточки к повторению, а вы еще не занимались. После 30 дней без занятий напоминание приостанавливается. Куда оно приходит, выберите в разделе «Настройки» → «Уведомления» в пункте «Напоминания об обучении».",
+  "Only on this device.": "",
   "Only on your own devices. You stay signed in while you use Flowplan.": "Только на собственных устройствах. Вход сохраняется, пока вы пользуетесь Flowplan.",
   "Only one emoji.": "Только один эмодзи.",
   "Only one of WEB_PUSH_PUBLIC_KEY / WEB_PUSH_PRIVATE_KEY is set – the generated file is used.": "Задана только одна из переменных WEB_PUSH_PUBLIC_KEY / WEB_PUSH_PRIVATE_KEY – используется созданный файл.",

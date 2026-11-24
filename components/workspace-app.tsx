@@ -4546,6 +4546,7 @@ export default function WorkspaceApp({
       <ActivityPing workspaceId={boot.workspace.id} />
       {/* The workspace's look (#196), unless this person chose Flowplan's own. */}
       <WorkspaceThemeStyle look={boot.plainLook ? null : boot.look} />
+      <style>{`html:root[data-ios-font] { --font-ui: var(--ios-font-family); }`}</style>
       <WorkspaceFavicon theme={boot.plainLook ? null : boot.look?.theme} />
       {focusMode && screen === "page" && data && (
         <FocusBar

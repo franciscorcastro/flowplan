@@ -8537,6 +8537,7 @@
   "Only notes tagged": "Nur Zettel mit Schlagwort",
   "Only on a computer": "Nur am Computer",
   "Only on days with cards due that you have not studied yet. After 30 days without studying the reminder pauses. Where it arrives you choose under Settings → Notifications at “Study reminders”.": "Nur an Tagen, an denen Karten fällig sind und du noch nicht gelernt hast. Nach 30 Tagen ohne Lernen pausiert die Erinnerung. Wohin sie kommt, stellst du unter Einstellungen → Benachrichtigungen bei „Lernerinnerungen“ ein.",
+  "Only on this device.": "Nur auf diesem Gerät.",
   "Only on your own devices. You stay signed in while you use Flowplan.": "Nur auf eigenen Geräten. Die Anmeldung bleibt bestehen, solange du Flowplan nutzt.",
   "Only one emoji.": "Nur ein Emoji.",
   "Only one of WEB_PUSH_PUBLIC_KEY / WEB_PUSH_PRIVATE_KEY is set – the generated file is used.": "Nur eine der beiden Variablen WEB_PUSH_PUBLIC_KEY / WEB_PUSH_PRIVATE_KEY ist gesetzt – verwendet wird die erzeugte Datei.",

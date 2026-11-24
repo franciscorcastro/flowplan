@@ -16,6 +16,7 @@
 // "Was ist neu" (#223, profile, all devices), "Beim Öffnen auf dem Handy"
 // (lib/start-screen.ts, profile, all devices), "Funktionen" (#378,
 // profile, all devices, components/settings/user/feature-modules.tsx).
+import { useEffect, useState } from "react";
 import { useKeyboardHints } from "@/lib/keyboard-hints";
 import { useInFlowplanApp } from "@/lib/native-app";
 import { CircleHalf, Gift, Keyboard, Moon, Sun } from "@phosphor-icons/react";
@@ -43,6 +44,7 @@ import { ToolbarLayoutEditor } from "./toolbar-layout-editor";
 import { FeatureModulesSettings } from "./feature-modules";
 import type { MotionPref } from "@/lib/motion-pref";
 import { motionPref, setMotionPrefLocal, useMotionPref } from "@/lib/motion-pref-client";
+import { BUNDLED_FONTS } from "@/lib/theme-fonts";
 import { fullWidthPages, setFullWidthPagesLocal, useFullWidthPages } from "@/lib/page-width-pref-client";
 import { commentMargin, setCommentMarginLocal, useCommentMargin } from "@/lib/comment-margin-pref-client";
 import { setStrikeDoneTasksLocal, strikeDoneTasks, useStrikeDoneTasks } from "@/lib/done-strike-pref-client";
@@ -138,6 +140,26 @@ export default function AppearanceSection() {
     });
   };
   const motion = useMotionPref(boot.motion);
+  const [iosFont, setIosFont] = useState("");
+  useEffect(() => {
+    const value = localStorage.getItem("flowplan:ios-font") ?? "";
+    setIosFont(value);
+    const family = BUNDLED_FONTS.find((font) => font.id === value)?.name;
+    if (family) document.documentElement.style.setProperty("--ios-font-family", `"${family}", ui-sans-serif, system-ui, sans-serif`);
+    else document.documentElement.style.removeProperty("--ios-font-family");
+    if (value) document.documentElement.dataset.iosFont = "";
+    else delete document.documentElement.dataset.iosFont;
+  }, []);
+  const chooseIosFont = (value: string) => {
+    setIosFont(value);
+    if (value) localStorage.setItem("flowplan:ios-font", value);
+    else localStorage.removeItem("flowplan:ios-font");
+    const family = BUNDLED_FONTS.find((font) => font.id === value)?.name;
+    if (family) document.documentElement.style.setProperty("--ios-font-family", `"${family}", ui-sans-serif, system-ui, sans-serif`);
+    else document.documentElement.style.removeProperty("--ios-font-family");
+    if (value) document.documentElement.dataset.iosFont = "";
+    else delete document.documentElement.dataset.iosFont;
+  };
   const [motionStatus, runMotion] = useSaveState();
   const chooseMotion = (value: MotionPref) => {
     const before = motionPref();
@@ -260,6 +282,12 @@ export default function AppearanceSection() {
             ))}
           </Select>
         </SettingRow>
+        {inApp && <SettingRow anchor="ios-font" label={t("Schriftart", "Font")} description={t("Nur auf diesem Gerät.", "Only on this device.")}>
+          <Select className={CONTROL.md} aria-label={t("Schriftart", "Font")} value={iosFont} onChange={(e) => chooseIosFont(e.target.value)}>
+            <option value="">{t("Standard", "Default")}</option>
+            {BUNDLED_FONTS.filter((font) => font.category === "sans").map((font) => <option key={font.id} value={font.id}>{font.name}</option>)}
+          </Select>
+        </SettingRow>}
         <SettingRow
           anchor="color-theme"
           label={t("Erscheinungsbild", "Appearance")}

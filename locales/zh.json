@@ -8537,6 +8537,7 @@
   "Only notes tagged": "仅带标签的笔记",
   "Only on a computer": "仅在电脑上",
   "Only on days with cards due that you have not studied yet. After 30 days without studying the reminder pauses. Where it arrives you choose under Settings → Notifications at “Study reminders”.": "仅在有卡片待复习且你当天还没学习时提醒。连续 30 天未学习后，提醒会暂停。在“设置 → 通知”的“学习提醒”中选择提醒发送到哪里。",
+  "Only on this device.": "",
   "Only on your own devices. You stay signed in while you use Flowplan.": "仅在你自己的设备上。使用 Flowplan 时，你会保持登录状态。",
   "Only one emoji.": "只能有一个表情符号。",
   "Only one of WEB_PUSH_PUBLIC_KEY / WEB_PUSH_PRIVATE_KEY is set – the generated file is used.": "只有 WEB_PUSH_PUBLIC_KEY / WEB_PUSH_PRIVATE_KEY 中的一个被设置——使用生成的文件。",
